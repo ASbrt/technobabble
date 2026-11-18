@@ -38,5 +38,4 @@ A general request ("look at whether the folders still keep together what belongs
 
 - On the expert's quick question, replies end with a line such as "I haven't checked this against your data", which baseline replies lack. True and short, but a mild form of nagging.
 - "Code with a job of its own goes in its own file" sometimes moves a single function into a new file (2 of 12 runs of scenario 19).
-- No rule for too few comments: no scenario has shown a function a reader could not follow.
 - Replies grow with the comment rule: scenario 21 from about 1,750-2,070 words (baseline) to 2,600-3,270, scenario 23 from 2,150-2,250 to 2,760-3,310, nearly all of it docstrings in the code. On small changes the rule also documents functions the task did not touch, and once gave a three-line test helper a ritual "In: nothing. Out: nothing returned".
