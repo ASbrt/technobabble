@@ -1,9 +1,9 @@
 ## Why this exists
 
-Give a coding agent autonomous work and its writing drifts into the private language of that session. A term it made up an hour ago turns up as a label everywhere, its comments reference some bug you never heard of, pull requests open offhandedly mentioning ADRs you have not thought about for a week and new features pile into a file that already does five jobs. Code is uncommented or littered with unhelpful mentions that a human evaluator can not place without digging through project history. It's not necessarily wrong, but for a reader it just amounts to a bunch of technobabble.
+Give a coding agent autonomous work and its writing drifts into the private language of that session. A term it made up suddenly is a label everywhere, its comments reference some bug you never heard of, new features pile into a file that already does five jobs. Code is uncommented or littered with unhelpful mentions that a human evaluator can not place without digging through project history. It's not necessarily wrong, but for a reader it just amounts to a bunch of technobabble.
 
 ## What this does
-This repository contains a short set of rules, loaded into every session, plus two skills for the moments when an agent writes for someone else. They are meant to make the agent express itself clearly as well as document and organize code so that anyone could jump in and follow immediately. In my tests, agents did fine on short, fresh tasks but slipped in longer sessions. With technobabble, those slips went away. The tests are small so far (three to five runs per case, judged by hand), so read [the results](tests/RESULTS.md) as evidence, not proof.
+This repository contains a short set of rules, loaded into every session, plus two skills for the moments when an agent writes for someone else. They are meant to make the agent express itself clearly as well as document and organize code so that anyone could jump in and follow immediately. In my tests, agents did fine on short, fresh tasks but slipped in longer sessions. With the added skills those slips went away. The tests are small so far (three to five runs per case, judged by hand), so read [the results](tests/RESULTS.md) as evidence, not proof.
 
 **In every session** ([core.md](core.md)), the agent:
 
