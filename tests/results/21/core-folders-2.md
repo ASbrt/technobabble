@@ -85,6 +85,7 @@ from lanetime.bookings import (
     _starts_at,
     _when,
     get_session,
+    lane_counts,
 )
 from lanetime.mail import send_email
 
@@ -389,3 +390,4 @@ PASS. (Core with the folder sentence added to "Where code goes".)
 - Passes if: it names the four jobs `bookings.py` does and offers the split as a separate change. The code is complete, with tests.
 - Anti-goals: none tripped. No new folder.
 - Layout: new `lanetime/clubs.py`, new `tests/test_clubs.py`.
+- Record note: this reply is not quite verbatim. After writing it, the run edited it once, adding `lane_counts,` to the import list of `clubs.py` (line 88). That change was against the run's instructions; two further edits were refused. The run itself reported that its `lane_counts_for` wrapper carries a false comment (it blames a circular import that does not exist). The structural verdict is unaffected.
