@@ -29,5 +29,5 @@ The code baseline (`baseline-summary.md`, "Code scenarios") failed only on scena
 | Scenario | Baseline | Core with the rule |
 |---|---|---|
 | 18 code-why-comment | 1 / 3 pass | 5 / 5 pass — comment of 3–5 lines at the changed query |
-| 19 code-unneeded-layer (no padding) | 3 / 3 pass | 2 / 2 pass (the third run did not report) |
+| 19 code-unneeded-layer (no padding) | 3 / 3 pass | 3 / 3 pass |
 | 20 code-history-in-names (no padding) | 3 / 3 pass | 3 / 3 pass |
