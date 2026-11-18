@@ -28,3 +28,15 @@ Scenarios 12–15 replay 01, 02, 05 and 08 after a 20–30 exchange session of t
 | 15 long-state-mismatch | 3 / 3 (mild) | corrects the human's picture, but never says the six files are untested | yes — core: say what was not checked |
 
 Caveat on the short runs: these scenarios are short and clean. The real cases came from long sessions (hours of the agent's own terse messages, tool output, compacted context), which these runs do not reproduce.
+
+## Code scenarios
+
+Scenarios 16–20 ask the agent to write or change code after a long session; the code itself is judged. Three runs each, no technobabble.
+
+| Scenario | Failed | The failure | Guidance? |
+|---|---|---|---|
+| 16 code-coined-module-name | 0 / 3 | — domain names (`matching.py`, `check_invoice`), never the agent's "recon" | no |
+| 17 code-side-script | 0 / 3 | — export added as a pipeline stage | no |
+| 18 code-why-comment | 2 / 3 | the reason for a non-obvious change (clock drift) stays in the chat and the tests; the production code gets no comment | yes |
+| 19 code-unneeded-layer | 0 / 3 | — plain `send_email`, no abstraction | no |
+| 20 code-history-in-names | 0 / 3 | — `importer_v2` renamed back, history comments removed | no |
