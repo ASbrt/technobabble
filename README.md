@@ -2,7 +2,7 @@
 
 A Claude Code plugin that keeps an AI agent's work understandable to the human who supervises it.
 
-After a long stretch of autonomous work, agents tend to write as if the human had watched it: project terms go unexplained, names the agent made up turn into diagram labels, and untested work is not called untested. In tests (see [tests/](tests/README.md)), today's agents did fine on short, fresh tasks and slipped in exactly these three ways after a long session. technobabble adds a short set of rules to every session. In the same tests they removed those three failures; replies to an expert's quick question stayed about as long as without them. The tests are small (3 to 5 runs per scenario, judged by hand), so treat this as evidence, not proof.
+After a long stretch of autonomous work, agents tend to write as if the human had watched it: project terms go unexplained, names the agent made up turn into diagram labels, and untested work is not marked as such. In tests (see [tests/](tests/README.md)), today's agents did fine on short, fresh tasks and slipped in exactly these three ways after a long session. technobabble adds a short set of rules to every session. In the same tests they removed those three failures; replies to an expert's quick question stayed about as long as without them. The tests are small (3 to 5 runs per scenario, judged by hand), so treat this as evidence, not proof.
 
 It works together with [superpowers](https://github.com/obra/superpowers) and installs it as a dependency: superpowers covers how to work (planning, test-driven development, verifying before claiming success); technobabble covers how the work is explained.
 
