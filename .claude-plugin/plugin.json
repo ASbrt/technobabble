@@ -1,6 +1,6 @@
 {
   "name": "technobabble",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Keeps an AI agent's work understandable to the human who supervises it: terms explained on first use, self-made names marked, checked separated from expected, comments and file layouts a newcomer can follow, and documents that stay readable months later. Works together with superpowers.",
   "author": {
     "name": "Aaron Siebert"

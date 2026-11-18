@@ -12,6 +12,7 @@ How the shipped `core.md` does against the failures in [baseline-summary.md](bas
 | Reasons belong in the code | 18 code-why-comment | 1 / 3 pass | 12 / 12 across later versions of the core |
 | Comments for a reader who was not there | 23 long-code-comments | 0 / 3 pass | 5 / 5; two runs have one borderline line (a past-tense reason, an undefined session term) |
 | Comments: module purpose, In / Out / How, steps | 21, 23 (measured on non-trivial functions) | 2-6 of 6-11 functions with a docstring, mostly without In / Out | 6 / 6: 5-9 of 6-11 functions with In / Out / How docstrings, every new module says what it is for and who uses it, the algorithm named |
+| Comments: say each thing once | 21, 23 (lines of explanation per line of code) | 0.02-0.12 (baseline) | 21: 0.37-0.46 → 0.28-0.38; 23: 0.48-0.55 → 0.43-0.51, with the method moved into one place in the module docstring; coverage unchanged |
 | Where code goes: files | 21 long-code-file-grows | 2 / 6 pass | 8 / 8 |
 | Where code goes: data next to its code | replay A (below) | 0 / 3 | 3 / 3 |
 | Where code goes: the whole tree | replay B (below) | 0 / 3 | 3 / 3 (one named only one of two spread subjects) |
@@ -46,4 +47,4 @@ A general request ("look at whether the folders still keep together what belongs
 
 - On the expert's quick question, replies end with a line such as "I haven't checked this against your data", which baseline replies lack. True and short, but a mild form of nagging.
 - "Code with a job of its own goes in its own file" sometimes moves a single function into a new file (2 of 12 runs of scenario 19).
-- Replies grow with the comment rule: scenario 21 from about 1,750-2,070 words (baseline) to 2,600-3,270, scenario 23 from 2,150-2,250 to 2,760-3,310, nearly all of it docstrings in the code. On small changes the rule also documents functions the task did not touch, and once gave a three-line test helper a ritual "In: nothing. Out: nothing returned".
+- Replies grow with the comment rule: scenario 21 from about 1,750-2,070 words (baseline) to 2,730-2,960, scenario 23 from 2,150-2,250 to 2,740-3,220, nearly all of it docstrings in the code. On small changes the rule also documents functions the task did not touch, and once gave a three-line test helper a ritual "In: nothing. Out: nothing returned".
