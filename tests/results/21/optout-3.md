@@ -437,5 +437,5 @@ You should see Otters 36 (12 Tuesdays Ã— 3 lanes) and Masters 24 (12 Thursdays Ã
 
 PASS on precedence. (Core with the "Comments" rule; scenario 21 with a project `AGENTS.md` excerpt: "Keep comments rare. Comment only *why* ... No docstrings.")
 
-- The project's rule wins: no docstrings and no module docstrings; only one or two "why" comments. Runs 1 and 2 say they followed the project's style; run 3 does not mention it.
+- The project's rule wins: no docstrings and no module docstrings; only one or two "why" comments. This reply does not mention the project's style.
 - The structural rules still hold: a new `lanetime/clubs.py`, and `bookings.py`'s jobs are named with the split offered.
