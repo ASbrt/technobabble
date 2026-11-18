@@ -3,14 +3,14 @@
 Give a coding agent autonomous work and its writing drifts into the language of that session. A term it made up suddenly is a label everywhere, its comments reference some bug you never heard of, new features pile into a file that already does five jobs. Code is uncommented or littered with unhelpful mentions that a human evaluator can not place without digging through project history. It's not necessarily wrong, but for a reader it just amounts to a bunch of technobabble.
 
 ## What this does
-This repository contains a short set of rules, loaded into every session, plus two skills for the moments when an agent writes for someone else. They are meant to make the agent express itself clearly as well as document and organize code so that anyone could jump in and follow immediately. In my tests, agents did fine on short, fresh tasks but slipped in longer sessions. With the added skills those slips went away. The tests are small so far (three to five runs per case, judged by hand), so read [the results](tests/RESULTS.md) as evidence, not proof.
+This repository contains a short set of rules, loaded into every session, plus two skills for the moments when an agent writes for someone else. They are meant to make the agent express itself clearly as well as document and organize code so that anyone could jump in and follow immediately. The tests are small so far (three to five runs per case, judged by hand), so read [the results](tests/RESULTS.md) as evidence, not proof.
 
 **In every session** ([core.md](core.md)), the agent:
 
-- explains a project term, identifier or abbreviation in a few words the first time it uses it, unless you used it yourself,
+- explains project terms, identifiers or abbreviations in a few words the first time it uses it, unless you used it yourself,
 - says when a name is one it made up, or describes the thing plainly instead,
 - says what it ran or checked and what it did not,
-- documents code for someone new to it: what each module is for, what each function takes, returns and how it works, short comments for the steps, the reason wherever the code rests on something it does not show. Session history is banned,
+- documents code for someone new to it: what each module is for, what each function takes, returns and how it works, short comments for the steps, session history is banned from code comments,
 - puts code with a job of its own in its own file, keeps the data code reads next to it, and tells you when a file or the folder tree mixes things that belong apart, 
 - keeps technical terms precise and explains them, rather than swapping in vaguer words.
 
