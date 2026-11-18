@@ -2,7 +2,7 @@
 
 A Claude Code plugin that keeps an AI agent's work understandable to the human who supervises it.
 
-After a long stretch of autonomous work, agents tend to write as if the human had watched it: project terms go unexplained, names the agent made up turn into diagram labels, and untested work is not marked as such. In tests (see [tests/](tests/README.md)), today's agents did fine on short, fresh tasks and slipped in exactly these three ways after a long session. technobabble adds a short set of rules to every session. In the same tests they removed those three failures; replies to an expert's quick question stayed about as long as without them. The tests are small (3 to 5 runs per scenario, judged by hand), so treat this as evidence, not proof.
+After a long stretch of autonomous work, agents tend to write as if the human had watched it: project terms go unexplained, names the agent made up turn into diagram labels, untested work is not marked as such, and the reason for a non-obvious code change stays in the chat instead of the code. In tests (see [tests/](tests/README.md)), today's agents did fine on short, fresh tasks and slipped in exactly these ways after a long session; naming, structure and abstraction in the code they wrote were already fine. technobabble adds a short set of rules to every session. In the same tests they removed those failures; replies to an expert's quick question stayed about as long as without them. The tests are small (3 to 5 runs per scenario, judged by hand), so treat this as evidence, not proof.
 
 It works together with [superpowers](https://github.com/obra/superpowers) and installs it as a dependency: superpowers covers how to work (planning, test-driven development, verifying before claiming success); technobabble covers how the work is explained.
 
@@ -10,7 +10,7 @@ It works together with [superpowers](https://github.com/obra/superpowers) and in
 
 | Part | What it does | When it applies |
 |---|---|---|
-| [core.md](core.md) | four rules: explain terms on first use, mark names you made up, say what you checked and what you did not, keep precision | every session, loaded by a session start hook |
+| [core.md](core.md) | five rules: explain terms on first use, mark names you made up, say what you checked and what you did not, put the reason for non-obvious code in a comment at that spot, keep precision | every session, loaded by a session start hook |
 | [skills/writing-docs](skills/writing-docs/SKILL.md) | how to write READMEs, reference documents, decision records and glossaries so they stay understandable months later | when the agent writes or edits documentation |
 
 A project's own instructions (AGENTS.md, CLAUDE.md, its own skills) always take precedence.

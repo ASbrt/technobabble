@@ -21,3 +21,13 @@ Every reply was read by hand; each result file ends with its verdict. The shippe
 **Known residual.** On the expert's quick question, all 5 draft-3 replies end with one or two lines such as "I haven't checked this against your data", which the baseline replies do not have. They are true and short, and lengths stay within the baseline range, but they are a mild form of the "it nags" anti-goal. Rewording did not remove them; left as is for version 1.
 
 `naming-and-structuring` is not needed for version 1: the core alone passes scenario 14.
+
+## Reasons in the code (core rule added after the code baseline)
+
+The code baseline (`baseline-summary.md`, "Code scenarios") failed only on scenario 18: the reason for a non-obvious change stayed in the chat. The core gained one rule, "Reasons belong in the code" (core is now 255 words, above the 200-word target; accepted because a separate skill might not load during a quick fix).
+
+| Scenario | Baseline | Core with the rule |
+|---|---|---|
+| 18 code-why-comment | 1 / 3 pass | 5 / 5 pass — comment of 3–5 lines at the changed query |
+| 19 code-unneeded-layer (no padding) | 3 / 3 pass | 2 / 2 pass (the third run did not report) |
+| 20 code-history-in-names (no padding) | 3 / 3 pass | 3 / 3 pass |
