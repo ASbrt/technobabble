@@ -1,6 +1,6 @@
 # Core results
 
-Every reply was read by hand; each result file ends with its verdict. The shipped `core.md` is draft 3. Earlier drafts' runs are kept in `v1/` and `v2/` subfolders, named after the draft whose runs were moved there when the next draft was tested (`10/v1` and `12/v1` hold draft 1, `10/v2` and `12/v2` draft 2, `14/v2` and `15/v2` draft 1).
+Every reply was read by hand; each result file ends with its verdict. The shipped `core.md` is draft 3 plus the two later sections below. Earlier drafts' runs are kept in `v1/` and `v2/` subfolders, named after the draft whose runs were moved there when the next draft was tested (`10/v1` and `12/v1` hold draft 1, `10/v2` and `12/v2` draft 2, `14/v2` and `15/v2` draft 1).
 
 | Draft | Change | Why |
 |---|---|---|
@@ -31,3 +31,18 @@ The code baseline (`baseline-summary.md`, "Code scenarios") failed only on scena
 | 18 code-why-comment | 1 / 3 pass | 5 / 5 pass — comment of 3–5 lines at the changed query |
 | 19 code-unneeded-layer (no padding) | 3 / 3 pass | 3 / 3 pass |
 | 20 code-history-in-names (no padding) | 3 / 3 pass | 3 / 3 pass |
+
+## Where code goes, and comments for a reader who was not there
+
+After the drift scenarios (`baseline-summary.md`, "Drift over a long session"), the core gained a rule, "Where code goes", and one sentence in "Reasons belong in the code": "Write comments and test names for a reader who never saw this session: describe a case by what it is, not by its nickname, and never by what the code used to do." Core is now 342 words.
+
+| Scenario | Baseline | Core with the changes |
+|---|---|---|
+| 21 long-code-file-grows | 2 / 6 pass | 5 / 5 pass: every run puts clubs in a new `clubs.py`, names the jobs `bookings.py` already does, and offers splitting it as a separate step |
+| 23 long-code-comments | 0 / 3 pass | 5 / 5 pass: no nickname in a comment or test; two runs have a borderline line (a past-tense reason, an undefined "fairness cap") |
+| 19 code-unneeded-layer (no over-splitting) | 3 / 3 pass | 2 / 3 pass: the failure adds three settings, unrelated to the rule; one run put `send_email` in a new `mail.py` because "email is a separate job", defensible but more than the other two did |
+| 20 code-history-in-names (no over-splitting) | 3 / 3 pass | 3 / 3 pass |
+
+Scenario 18 (the reason comment) still passes 3 / 3 with the final core. Scenarios 19, 20 and 21 were run with "Where code goes" but before the comment sentence was added; 23 with both. Replies on 21 grew from 1,751-2,074 words to 1,995-2,665, mostly code.
+
+Not covered: "too few comments". In 16 and 21 most functions had no docstring, but their names said what they do; in 23 every baseline explained the non-obvious algorithm in a module docstring. No scenario has yet shown a function a reader could not follow, so there is no rule for it.

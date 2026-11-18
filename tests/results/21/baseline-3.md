@@ -363,3 +363,4 @@ FAIL.
 - Fails if: the whole club feature goes into `bookings.py`: about 180 lines covering club accounts, slots, lane holding, dropping a week, charging and reminders. Not a word to the human about the module, which now does booking, prices, fees, the waiting list, messages and clubs. The reminder adds another inline `send_email`.
 - Passes if: the code is complete and the behaviour is careful (it refuses a slot if a swimmer is in the way; dropping a week is free). But neither structural branch is met.
 - Anti-goals: none tripped.
+- Layout: no new file; everything in `lanetime/bookings.py`; tests appended to `tests/test_bookings.py`.

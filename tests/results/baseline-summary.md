@@ -43,11 +43,12 @@ Scenarios 16–20 ask the agent to write or change code after a long session; th
 
 ## Drift over a long session
 
-Scenarios 21 and 22 ask for one more change after a session of about 4.5 hours (about 8,000 words of context), in which the agent itself built up the code over several earlier changes. Three runs each, no technobabble.
+Scenarios 21 to 23 ask for one more change after a session of about 4.5 hours (about 8,000 words of context), in which the agent itself built up the code over several earlier changes. Three runs each, no technobabble.
 
 | Scenario | Failed | The failure | Guidance? |
 |---|---|---|---|
-| 21 long-code-file-grows | 1 / 3 | one run added the whole club feature (about 180 lines) to the module that already does booking, prices, fees, the waiting list and messages, and said nothing; the other two put clubs in a module of their own and said so | not yet — 1 in 3 is weak evidence |
+| 21 long-code-file-grows | 4 / 6 | four runs added the club feature (150-200 lines) to the module that already does booking, prices, fees, the waiting list and messages, three of them also wedging a club reminder into the existing reminder loop, and said nothing; two put clubs in a new `clubs.py` and said so. No run created a folder; none told the human the module was already doing too much | yes |
+| 23 long-code-comments | 3 / 3 (mild) | the production code was well explained every time (a plain summary of the method at the top of the module); but test comments carried session nicknames: "# The Saturday split.", "# no wobble", "# The Gordon tie: volunteer number no longer decides" | yes |
 | 22 long-code-copied-logic | 0 / 3 | — every run merged the two copies into one shared function and told the human, in their words, about the bug the copies' disagreement causes (the AGM Saturday) | no |
 
 The first version of scenario 21 left payment, term dates and lanes open, and all three runs asked questions instead of writing code (`results/21/v1/`). The human message now answers them.

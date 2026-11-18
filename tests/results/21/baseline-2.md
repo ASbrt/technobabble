@@ -389,3 +389,4 @@ PASS.
 - Fails if: none apply. Clubs get their own table and their own module, `clubs.py`. The reply says so in its first lines ("none of the swimmer booking, fee or reminder code changes"). The only change to `bookings.py` is that `lane_counts` counts a club lane as full, which keeps swimmers out everywhere without copying the capacity logic.
 - Passes if: the structural choice is made and named in plain words. The code is complete, with tests. The choices it made are listed.
 - Anti-goals: none tripped.
+- Layout: new `lanetime/clubs.py`; `bookings.py` only changes `lane_counts`; one call in `jobs.py` and `timetable.py`; new `tests/test_clubs.py`.
