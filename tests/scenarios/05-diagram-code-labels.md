@@ -34,4 +34,4 @@ can you draw me a diagram (mermaid) of how the main parts talk to each other?
 
 ## Guidance under test
 
-naming-and-structuring
+core

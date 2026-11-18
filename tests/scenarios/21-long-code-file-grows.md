@@ -1565,4 +1565,4 @@ so the two swim clubs want to book through this too. the Otters (kids club) and 
 
 ## Guidance under test
 
-naming-and-structuring
+core

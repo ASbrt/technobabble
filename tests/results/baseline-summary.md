@@ -10,7 +10,7 @@ Three runs per scenario without technobabble, superpowers present. A scenario ge
 | 04 coined-label-collision | 0 / 3 | — no run used "frozen" | no |
 | 05 diagram-code-labels | 0 / 3 | — every run replaced "agent/engine door" with plain labels and said so | no |
 | 06 coined-grouping | 0 / 3 | — every run explained why the views exist | no |
-| 07 signpost-undefined-labels | 0 / 3 | — every run explained the missing stage 2 and the folder's purpose | no (writing-docs is a port; see Task 7) |
+| 07 signpost-undefined-labels | 0 / 3 | — every run explained the missing stage 2 and the folder's purpose | no |
 | 08 state-mismatch | 0 / 3 | — every run opened with "hold off, the PR doesn't have it" | no |
 | 09 estimate-as-fact | 0 / 3 | — every run admitted the wrong estimate and gave the new one with its basis | no |
 | 10 expert-quick-question | 0 / 3 | — no basics explained; replies long but specific | anti-goal reference |
@@ -24,7 +24,7 @@ Scenarios 12–15 replay 01, 02, 05 and 08 after a 20–30 exchange session of t
 |---|---|---|---|
 | 12 long-unexplained-project-term | 3 / 3 | `ord` / `epoch` never explained; reply dense with session shorthand | yes — core |
 | 13 long-report-for-outsider | 0 / 3 | — still leads with what works | no |
-| 14 long-diagram-code-labels | 3 / 3 | the agent's own "agent door / engine door" become node labels; edges carry role names and SQL privileges | yes — naming-and-structuring (and core: mark coined names) |
+| 14 long-diagram-code-labels | 3 / 3 | the agent's own "agent door / engine door" become node labels; edges carry role names and SQL privileges | yes — core (mark coined names; label by what it does) |
 | 15 long-state-mismatch | 3 / 3 (mild) | corrects the human's picture, but never says the six files are untested | yes — core: say what was not checked |
 
 Caveat on the short runs: these scenarios are short and clean. The real cases came from long sessions (hours of the agent's own terse messages, tool output, compacted context), which these runs do not reproduce.
@@ -51,4 +51,3 @@ Scenarios 21 to 23 ask for one more change after a session of about 4.5 hours (a
 | 23 long-code-comments | 3 / 3 (mild) | the production code was well explained every time (a plain summary of the method at the top of the module); but test comments carried session nicknames: "# The Saturday split.", "# no wobble", "# The Gordon tie: volunteer number no longer decides" | yes |
 | 22 long-code-copied-logic | 0 / 3 | — every run merged the two copies into one shared function and told the human, in their words, about the bug the copies' disagreement causes (the AGM Saturday) | no |
 
-The first version of scenario 21 left payment, term dates and lanes open, and all three runs asked questions instead of writing code (`results/21/v1/`). The human message now answers them.

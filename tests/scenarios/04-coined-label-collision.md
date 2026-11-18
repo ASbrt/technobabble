@@ -29,4 +29,4 @@ so are crossfades doable? keep it short
 
 ## Guidance under test
 
-naming-and-structuring
+core

@@ -317,4 +317,4 @@ add email notifications for overdue tasks too
 
 ## Guidance under test
 
-naming-and-structuring
+core

@@ -1,73 +1,41 @@
 # Core results
 
-Every reply was read by hand; each result file ends with its verdict. The shipped `core.md` is draft 3 plus the two later sections below. Earlier drafts' runs are kept in `v1/` and `v2/` subfolders, named after the draft whose runs were moved there when the next draft was tested (`10/v1` and `12/v1` hold draft 1, `10/v2` and `12/v2` draft 2, `14/v2` and `15/v2` draft 1).
+How the shipped `core.md` does against the failures in [baseline-summary.md](baseline-summary.md). Every reply was read by hand; each result file ends with its verdict. Runs named `core-*` used the core as it stood when they were run; each verdict names the rule being tested.
 
-| Draft | Change | Why |
+## The rules that fixed a failure
+
+| Rule | Scenario | Without technobabble | With the core |
+|---|---|---|---|
+| Terms | 12 long-unexplained-project-term | 0 / 3 pass | 3 / 3 |
+| Names you coined | 14 long-diagram-code-labels | 0 / 3 pass | 5 / 5, judged strictly on node labels |
+| Checked or expected | 15 long-state-mismatch | 0 / 3 pass | 3 / 3 |
+| Reasons belong in the code | 18 code-why-comment | 1 / 3 pass | 12 / 12 across later versions of the core |
+| Comments for a reader who was not there | 23 long-code-comments | 0 / 3 pass | 5 / 5; two runs have one borderline line (a past-tense reason, an undefined session term) |
+| Where code goes: files | 21 long-code-file-grows | 2 / 6 pass | 8 / 8 |
+| Where code goes: data next to its code | replay A (below) | 0 / 3 | 3 / 3 |
+| Where code goes: the whole tree | replay B (below) | 0 / 3 | 3 / 3 (one named only one of two spread subjects) |
+
+## Checks that nothing got worse
+
+| Scenario | Without technobabble | With the core |
 |---|---|---|
-| 1 | first version, 200 words | rules for the failures seen at baseline |
-| 2 | "Never explain a term they used themselves or a concept they plainly know; match their expertise" | draft 1 explained BRIN to an expert in 4 of 5 runs (scenario 10) |
-| 3 | diagram labels: "put code names and your own names beside that label, never instead of it"; checked/expected: "When you report on work, …" | final review: diagrams still used "Agent door" as node labels (14), and advice answers gained a not-checked paragraph (10) |
+| 11 project-rules-win | 3 / 3 pass | 3 / 3: the project's own rules still win |
+| 10 expert-quick-question | 378-447 words | 360-446 words; 1 / 5 defines a term the expert knows |
+| 19 code-unneeded-layer | 3 / 3 pass | 10 / 12 across later versions; both failures add settings nobody asked for, unrelated to the rules |
+| 20 code-history-in-names | 3 / 3 pass | 9 / 9 |
 
-## Draft 3 (shipped)
+## Replays
 
-| Scenario | Baseline (no technobabble) | Draft 3 |
-|---|---|---|
-| 12 long-unexplained-project-term | 0 / 3 pass | 3 / 3 pass |
-| 14 long-diagram-code-labels | 0 / 3 pass | 5 / 5 pass, judged strictly on node labels |
-| 15 long-state-mismatch | 0 / 3 pass | 3 / 3 pass |
-| 11 project-rules-win | 3 / 3 pass | 3 / 3 pass — the project's three-bullet rule and glossary rule still win |
-| 10 expert-quick-question (anti-goal) | reference: 378–447 words | 360–446 words; 1 / 5 defines BRIN in one clause |
+Two rules could not be tested with one-reply scenarios, which never need a folder. They were tested by replaying planning tasks in a private repository: a fresh copy from before a milestone, no git history, the original request, plan only.
 
-**Known residual.** On the expert's quick question, all 5 draft-3 replies end with one or two lines such as "I haven't checked this against your data", which the baseline replies do not have. They are true and short, and lengths stay within the baseline range, but they are a mild form of the "it nags" anti-goal. Rewording did not remove them; left as is for version 1.
+- **Replay A** adds a validator whose schemas, rules and examples the repository's own documents place in separate top-level folders. Passing means following the documents but telling the person what ends up apart from the code.
+- **Replay B** adds a service to a tree where two subjects are each spread over several top-level folders, with a request that says nothing about layout. Passing means naming that spread unprompted and offering to regroup it as a separate step.
 
-`naming-and-structuring` is not needed for version 1: the core alone passes scenario 14.
+A general request ("look at whether the folders still keep together what belongs together") reached 1 / 3 on replay B and added an unasked layout paragraph to one bug fix. The concrete step that shipped ("list the project's top-level folders and say in a phrase what each holds") reached 3 / 3 and added nothing to bug fixes.
 
-## Reasons in the code (core rule added after the code baseline)
+## Known residuals
 
-The code baseline (`baseline-summary.md`, "Code scenarios") failed only on scenario 18: the reason for a non-obvious change stayed in the chat. The core gained one rule, "Reasons belong in the code" (core is now 255 words, above the 200-word target; accepted because a separate skill might not load during a quick fix).
-
-| Scenario | Baseline | Core with the rule |
-|---|---|---|
-| 18 code-why-comment | 1 / 3 pass | 5 / 5 pass — comment of 3–5 lines at the changed query |
-| 19 code-unneeded-layer (no padding) | 3 / 3 pass | 3 / 3 pass |
-| 20 code-history-in-names (no padding) | 3 / 3 pass | 3 / 3 pass |
-
-## Where code goes, and comments for a reader who was not there
-
-After the drift scenarios (`baseline-summary.md`, "Drift over a long session"), the core gained a rule, "Where code goes", and one sentence in "Reasons belong in the code": "Write comments and test names for a reader who never saw this session: describe a case by what it is, not by its nickname, and never by what the code used to do." Core is now 342 words.
-
-| Scenario | Baseline | Core with the changes |
-|---|---|---|
-| 21 long-code-file-grows | 2 / 6 pass | 5 / 5 pass: every run puts clubs in a new `clubs.py`, names the jobs `bookings.py` already does, and offers splitting it as a separate step |
-| 23 long-code-comments | 0 / 3 pass | 5 / 5 pass: no nickname in a comment or test; two runs have a borderline line (a past-tense reason, an undefined "fairness cap") |
-| 19 code-unneeded-layer (no over-splitting) | 3 / 3 pass | 2 / 3 pass: the failure adds three settings, unrelated to the rule; one run put `send_email` in a new `mail.py` because "email is a separate job", defensible but more than the other two did |
-| 20 code-history-in-names (no over-splitting) | 3 / 3 pass | 3 / 3 pass |
-
-Scenario 18 (the reason comment) still passes 3 / 3 with the final core. Scenarios 19, 20 and 21 were run with "Where code goes" but before the comment sentence was added; 23 with both. Replies on 21 grew from 1,751-2,074 words to 1,995-2,665, mostly code.
-
-Not covered: "too few comments". In 16 and 21 most functions had no docstring, but their names said what they do; in 23 every baseline explained the non-obvious algorithm in a module docstring. No scenario has yet shown a function a reader could not follow, so there is no rule for it.
-
-## Folders: data next to the code that reads it
-
-No scenario above needed a folder, so none tested one. The test was a replay of a milestone from a real project (kept private, because technobabble must not name it): a fresh copy of that repository from before the milestone, with no git history, and the original request, asking for the implementation plan only. In the real project the milestone left its schemas, rule file and example designs in three folders apart from the validator that reads them, and the maintainer later had to restructure. The project's own documents named those folders, so following them was right; the failure is not saying so.
-
-| Variant | Raised that the data ends up apart from its code |
-|---|---|
-| Baseline | 0 / 3 (one asked "are you happy with the layout?" without a reason to doubt it) |
-| Core with "Where code goes" (files only) | 0 / 3 (two wrote down why they kept things apart: "ADR names it", "moving the rule file is churn the task does not ask for") |
-| Core with the folder sentence | 3 / 3: each follows the documents and offers moving the data next to the code as a separate step |
-
-The folder sentence, added to "Where code goes": "Data a piece of code reads (its schemas, rules, examples) goes next to that code, not into a folder per kind of file; if the project's documents place it elsewhere, follow them, but tell the person what ends up apart and offer to change it." Core is now 387 words. Checked against small changes: 21 passes 3 / 3 with no new folder; 19 passes 2 / 3 (the failure again adds settings nobody asked for, as before the sentence; one passing run again puts `send_email` in a file of its own).
-
-## The whole tree: a concrete step, not a general request
-
-The folder sentence above covers data the agent adds. A second private replay tested whether agents step back and judge a tree that is already spread out: the same project one milestone later, with its database and its validator each spread over several top-level folders, and a request about a new service that says nothing about layout. Plans only.
-
-| Variant | Plans that named the existing spread |
-|---|---|
-| Baseline | 0 / 3 |
-| Core with "Where code goes" and the folder sentence | 0 / 3 |
-| + "When you add to a project, also look at whether its folders still keep together what belongs together" | 1 / 3 |
-| + "When you plan work that adds a new module or package, list the project's top-level folders and say in a phrase what each holds; if one subject is spread over several of them, tell the person and offer to regroup it as a separate step." | 3 / 3 (one named only one of the two spread subjects) |
-
-The general request was too vague to fire; the concrete step, tied to the moment of planning a new module, worked. All three followed the existing layout and offered regrouping as a separate step. With the general request, one bug fix (18) gained an unasked layout paragraph; with the concrete step, 18 (2 runs), 19 and 20 had no layout remark at all. Core is now 432 words.
+- On the expert's quick question, replies end with a line such as "I haven't checked this against your data", which baseline replies lack. True and short, but a mild form of nagging.
+- "Code with a job of its own goes in its own file" sometimes moves a single function into a new file (2 of 12 runs of scenario 19).
+- No rule for too few comments: no scenario has shown a function a reader could not follow.
+- Replies on scenario 21 grew from about 1,750-2,070 words to 1,960-2,670, mostly code.

@@ -346,4 +346,4 @@ ok, swap in the new import logic and clean up
 
 ## Guidance under test
 
-naming-and-structuring
+core

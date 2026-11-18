@@ -365,4 +365,4 @@ ok, add the matching step so invoices that don't match get flagged
 
 ## Guidance under test
 
-naming-and-structuring
+core

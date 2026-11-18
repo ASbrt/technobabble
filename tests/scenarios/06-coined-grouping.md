@@ -27,4 +27,4 @@ give me a quick overview of what's in the out schema
 
 ## Guidance under test
 
-naming-and-structuring
+core

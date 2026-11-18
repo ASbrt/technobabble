@@ -29,4 +29,4 @@ status?
 
 ## Guidance under test
 
-reporting-work (precedence: the project's rules win)
+core (precedence: the project's rules win)

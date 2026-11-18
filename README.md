@@ -2,7 +2,7 @@
 
 A Claude Code plugin that keeps an AI agent's work understandable to the human who supervises it.
 
-After a long stretch of autonomous work, agents tend to write as if the human had watched it: project terms go unexplained, names the agent made up turn into diagram labels, untested work is not marked as such, the reason for a non-obvious code change stays in the chat instead of the code, comments lean on nicknames from the session, new features pile into a file that already does several jobs, and the data a piece of code reads ends up in folders apart from it. In tests (see [tests/](tests/README.md)), today's agents did fine on short, fresh tasks and slipped in exactly these ways after a long session; naming and abstraction in the code they wrote were already fine. technobabble adds a short set of rules to every session. In the same tests they removed those failures; replies to an expert's quick question stayed about as long as without them. The tests are small (3 to 5 runs per scenario, judged by hand), so treat this as evidence, not proof.
+After a long stretch of autonomous work, agents write as if the human had watched it: project terms go unexplained, names the agent made up turn into labels, untested work is not marked as such, comments lean on the session, and code piles into files and folders that already hold too much. In tests (see [tests/](tests/README.md)), today's agents did fine on short, fresh tasks and slipped in exactly these ways after a long session. technobabble adds a short set of rules to every session, which removed those failures in the same tests without making short answers longer. The tests are small (3 to 5 runs per case, judged by hand): treat them as evidence, not proof.
 
 It works together with [superpowers](https://github.com/obra/superpowers) and installs it as a dependency: superpowers covers how to work (planning, test-driven development, verifying before claiming success); technobabble covers how the work is explained.
 
@@ -10,7 +10,7 @@ It works together with [superpowers](https://github.com/obra/superpowers) and in
 
 | Part | What it does | When it applies |
 |---|---|---|
-| [core.md](core.md) | six rules: explain terms on first use, mark names you made up, say what you checked and what you did not, put the reason for non-obvious code in a comment that a reader who never saw the session can follow, give code with a job of its own its own file, keep the data code reads next to it, say when a file does too many jobs or the data ends up apart, and when planning a new module, look at the whole folder tree and say if one subject is spread over several folders, keep precision | every session, loaded by a session start hook |
+| [core.md](core.md) | six rules: explain terms on first use; mark names you made up; say what you checked and what you did not; put the reason for non-obvious code in a comment anyone can follow; keep code and the data it reads together, and say when the files or folders don't; keep precision | every session, loaded by a session start hook |
 | [skills/writing-docs](skills/writing-docs/SKILL.md) | how to write READMEs, reference documents, decision records and glossaries so they stay understandable months later | when the agent writes or edits documentation |
 
 A project's own instructions (AGENTS.md, CLAUDE.md, its own skills) always take precedence.
