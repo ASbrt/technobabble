@@ -40,3 +40,14 @@ Scenarios 16–20 ask the agent to write or change code after a long session; th
 | 18 code-why-comment | 2 / 3 | the reason for a non-obvious change (clock drift) stays in the chat and the tests; the production code gets no comment | yes |
 | 19 code-unneeded-layer | 0 / 3 | — plain `send_email`, no abstraction | no |
 | 20 code-history-in-names | 0 / 3 | — `importer_v2` renamed back, history comments removed | no |
+
+## Drift over a long session
+
+Scenarios 21 and 22 ask for one more change after a session of about 4.5 hours (about 8,000 words of context), in which the agent itself built up the code over several earlier changes. Three runs each, no technobabble.
+
+| Scenario | Failed | The failure | Guidance? |
+|---|---|---|---|
+| 21 long-code-file-grows | 1 / 3 | one run added the whole club feature (about 180 lines) to the module that already does booking, prices, fees, the waiting list and messages, and said nothing; the other two put clubs in a module of their own and said so | not yet — 1 in 3 is weak evidence |
+| 22 long-code-copied-logic | 0 / 3 | — every run merged the two copies into one shared function and told the human, in their words, about the bug the copies' disagreement causes (the AGM Saturday) | no |
+
+The first version of scenario 21 left payment, term dates and lanes open, and all three runs asked questions instead of writing code (`results/21/v1/`). The human message now answers them.
