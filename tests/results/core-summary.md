@@ -31,7 +31,7 @@ Scenario 23's code, without technobabble (`code-A.py`, from `baseline-1`) and wi
 
 ## Opting out
 
-A project instruction overrides the comment rule: scenario 21 with an `AGENTS.md` excerpt saying "Comment only why ... No docstrings" gave 0 docstrings in 3 / 3 runs, each reply saying it followed the project's style ([21/optout-*](21/)).
+A project instruction overrides the comment rule: scenario 21 with an `AGENTS.md` excerpt saying "Comment only why ... No docstrings" gave 0 docstrings in 3 / 3 runs; two of the replies say they followed the project's style ([21/optout-*](21/)).
 
 ## Replays
 
