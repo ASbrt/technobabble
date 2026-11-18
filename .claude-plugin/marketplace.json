@@ -4,7 +4,7 @@
     "name": "Aaron Siebert"
   },
   "metadata": {
-    "description": "technobabble: keeps an AI agent's work understandable to the human who supervises it."
+    "description": "technobabble: keeps an AI coding agent's work understandable to people who were not in the session."
   },
   "allowCrossMarketplaceDependenciesOn": [
     "superpowers-marketplace"
@@ -13,7 +13,7 @@
     {
       "name": "technobabble",
       "source": "./",
-      "description": "Keeps an AI agent's work understandable to the human who supervises it. Works together with superpowers."
+      "description": "Keeps an AI coding agent's work understandable to people who were not in the session: terms explained, made-up names marked, untested work called untested, code and pull requests a newcomer can follow. Works together with superpowers."
     }
   ]
 }

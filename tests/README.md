@@ -8,8 +8,7 @@ technobabble's guidance is tested the way superpowers' `writing-skills` asks: wa
 | [scenarios/](scenarios/) | one file per situation in which agents lose their human; each says what failing and passing look like |
 | [runner-prompt.md](runner-prompt.md) | the prompt a fresh subagent gets for one run |
 | [fill-runner.py](fill-runner.py) | assembles that prompt from a scenario and the guidance under test |
-| [results/](results/) | every reply, verbatim, with its verdict |
-| [triggering.md](triggering.md) | whether each skill's description makes it load at the right moments |
+| [RESULTS.md](RESULTS.md) | what happened: failures without technobabble, what fixed them, and what it costs |
 
 ## Running a scenario
 
@@ -23,7 +22,7 @@ Give the printed prompt to a fresh subagent with no tools and nothing else in it
 
 - **Repetitions:** 3 per variant for scenarios; 5 when testing the wording of the core. The control is the scenario's 3 baseline runs.
 - **Judging:** tick each line of the scenario's `Fails if`, `Passes if` and `Anti-goals` lists. A run passes when no `Fails if` line applies, every `Passes if` line holds and no anti-goal is tripped.
-- **Recording:** `results/<NN>/<variant>-<n>.md`, variant one of `baseline`, `core`, `skill`, `core+skill`: the reply verbatim, then `## Verdict` with the ticked lists.
+- **Recording:** keep each reply with its verdict while you work; add the outcome to [RESULTS.md](RESULTS.md).
 
 ## Writing a scenario
 
