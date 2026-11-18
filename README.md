@@ -2,7 +2,7 @@
 
 A Claude Code plugin that keeps an AI agent's work understandable to the human who supervises it.
 
-After a long stretch of autonomous work, agents write as if the human had watched it: project terms go unexplained, names the agent made up turn into labels, untested work is not marked as such, comments lean on the session, and code piles into files and folders that already hold too much. In tests (see [tests/](tests/README.md)), today's agents did fine on short, fresh tasks and slipped in exactly these ways after a long session. technobabble adds a short set of rules to every session, which removed those failures in the same tests without making short answers longer. The tests are small (3 to 5 runs per case, judged by hand): treat them as evidence, not proof.
+After a long stretch of autonomous work, agents write as if the human had watched it: project terms go unexplained, names the agent made up turn into labels, untested work is not marked as such, comments and pull requests lean on the session, and code piles into files and folders that already hold too much. In tests (see [tests/](tests/README.md)), today's agents did fine on short, fresh tasks and slipped in exactly these ways after a long session. technobabble adds a short set of rules to every session, which removed those failures in the same tests without making short answers longer. The tests are small (3 to 5 runs per case, judged by hand): treat them as evidence, not proof.
 
 It works together with [superpowers](https://github.com/obra/superpowers) and installs it as a dependency: superpowers covers how to work (planning, test-driven development, verifying before claiming success); technobabble covers how the work is explained.
 
@@ -12,6 +12,7 @@ It works together with [superpowers](https://github.com/obra/superpowers) and in
 |---|---|---|
 | [core.md](core.md) | six rules: explain terms on first use; mark names you made up; say what you checked and what you did not; document code for someone new to it (what each module is for, In / Out / How for each function, the steps inside, the reasons, never the session's history); keep code and the data it reads together, and say when the files or folders don't; keep precision | every session, loaded by a session start hook |
 | [skills/writing-docs](skills/writing-docs/SKILL.md) | how to write READMEs, reference documents, decision records and glossaries so they stay understandable months later | when the agent writes or edits documentation |
+| [skills/writing-prs](skills/writing-prs/SKILL.md) | how to write a pull request or issue that a teammate who was not in the session can follow: what changes and why first, each term explained once, one topic, where to start reviewing, what was and was not tested | when the agent opens or edits a pull request or files an issue |
 
 A project's own instructions (AGENTS.md, CLAUDE.md, its own skills) always take precedence. To turn a rule off for one project, say so there; for example, a line in AGENTS.md such as "Comment only why something is done; no docstrings" replaces the comment rule. To turn technobabble off entirely, disable the plugin.
 

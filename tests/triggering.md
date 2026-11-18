@@ -1,5 +1,9 @@
 # Triggering
 
+Whether technobabble's skills load at the right moments.
+
+## writing-docs
+
 Whether `writing-docs` loads at the right moments. Each request went to a fresh subagent with the list of available skills (superpowers' 15 and `technobabble:writing-docs`, names and descriptions only) and the question which it would load before starting. One run per request, 2026-11-18.
 
 | Request | Should load writing-docs | Loaded |
@@ -12,5 +16,22 @@ Whether `writing-docs` loads at the right moments. Each request went to a fresh 
 | Write an implementation plan for the invoice export feature. | no | superpowers:writing-plans |
 | Create a new skill for our release checklist. | no | superpowers:brainstorming, superpowers:writing-skills |
 | Add a docstring to the next_event_ord() function. | no | NONE |
+
+8 of 8 as intended.
+
+## writing-prs
+
+Same method, 2026-11-18, one subagent answering each request as a fresh conversation, with superpowers' skills and both technobabble skills listed.
+
+| Request | Should load writing-prs | Loaded |
+|---|---|---|
+| Open a PR for this branch. | yes | technobabble:writing-prs |
+| Push the branch and create a pull request against main. | yes | technobabble:writing-prs |
+| Rewrite the description of PR #12, it's hard to follow. | yes | technobabble:writing-prs |
+| File an issue for the flaky login test. | yes | technobabble:writing-prs |
+| Commit these changes. | no | NONE |
+| Fix the failing test in billing.py. | no | superpowers:systematic-debugging |
+| Update the README of the src/importer folder. | no | technobabble:writing-docs |
+| Review PR #7 for bugs. | no | NONE |
 
 8 of 8 as intended.

@@ -51,3 +51,15 @@ Scenarios 21 to 23 ask for one more change after a session of about 4.5 hours (a
 | 23 long-code-comments | 3 / 3 (mild) | the production code was well explained every time (a plain summary of the method at the top of the module); but test comments carried session nicknames: "# The Saturday split.", "# no wobble", "# The Gordon tie: volunteer number no longer decides" | yes |
 | 22 long-code-copied-logic | 0 / 3 | — every run merged the two copies into one shared function and told the human, in their words, about the bug the copies' disagreement causes (the AGM Saturday) | no |
 
+
+## Pull request descriptions
+
+Scenario 24 ends a four-hour session with "open the PR, give me the title and the description". Three runs without technobabble, three with the core only, three with the core and `writing-prs`. Judged on the four project terms a reader most needs (pool, stitcher, freeze, hold), on decision numbers given with their meaning, and on whether the reviewer is told where to start.
+
+| Variant | Terms explained (of 4) | Review guide | Notes |
+|---|---|---|---|
+| No technobabble | 0-1 | 1 / 3 | plain opening and the unrelated fix called out in all three |
+| Core only | 1-3 | 0 / 3 | "the AGM" left as a bare past discussion in 3 / 3 |
+| Core + writing-prs | 3-4 | 3 / 3 | decision numbers and open questions given with their meaning |
+
+Fresh readers on a smaller model rated all of them about 3-4 of 5 for difficulty and flagged even explained terms, so the counts above are from reading the PRs by hand.

@@ -15,6 +15,9 @@ from pathlib import Path
 tests_dir = Path(__file__).resolve().parent
 
 
+SECTIONS = "Situation|Human message|Fails if|Passes if|Anti-goals|Guidance under test"
+
+
 def scenario_text(path: Path) -> str:
     """The parts of a scenario the agent may see: Situation and Human message.
 
@@ -23,7 +26,9 @@ def scenario_text(path: Path) -> str:
     text = path.read_text()
     shown = []
     for heading in ("Situation", "Human message"):
-        match = re.search(rf"^## {heading}\n(.*?)(?=^## |\Z)", text, re.S | re.M)
+        # A section ends at the next of the scenario's own headings, so "## " lines
+        # inside the session (git output, quoted documents) do not cut it short.
+        match = re.search(rf"^## {heading}\n(.*?)(?=^## (?:{SECTIONS})\n|\Z)", text, re.S | re.M)
         if not match:
             sys.exit(f"{path}: missing '## {heading}' section")
         shown.append(f"## {heading}\n{match.group(1).strip()}")

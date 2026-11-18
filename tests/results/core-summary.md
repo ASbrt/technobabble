@@ -13,6 +13,7 @@ How the shipped `core.md` does against the failures in [baseline-summary.md](bas
 | Comments for a reader who was not there | 23 long-code-comments | 0 / 3 pass | 5 / 5; two runs have one borderline line (a past-tense reason, an undefined session term) |
 | Comments: module purpose, In / Out / How, steps | 21, 23 (measured on non-trivial functions) | 2-6 of 6-11 functions with a docstring, mostly without In / Out | 6 / 6: 5-9 of 6-11 functions with In / Out / How docstrings, every new module says what it is for and who uses it, the algorithm named |
 | Comments: say each thing once | 21, 23 (lines of explanation per line of code) | 0.02-0.12 (baseline) | 21: 0.37-0.46 → 0.28-0.38; 23: 0.48-0.55 → 0.43-0.51, with the method moved into one place in the module docstring; coverage unchanged |
+| writing-prs (skill) | 24 long-pr-description | no technobabble: 0-1 of 4 key terms explained; core only: 1-3, no review guide | 3-4 of 4, review guide 3 / 3; loads when a PR or issue is written (`triggering.md`, 8 / 8) |
 | Where code goes: files | 21 long-code-file-grows | 2 / 6 pass | 8 / 8 |
 | Where code goes: data next to its code | replay A (below) | 0 / 3 | 3 / 3 |
 | Where code goes: the whole tree | replay B (below) | 0 / 3 | 3 / 3 (one named only one of two spread subjects) |
