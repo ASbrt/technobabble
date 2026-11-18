@@ -1,0 +1,21 @@
+{
+  "name": "technobabble",
+  "version": "1.0.0",
+  "description": "Keeps an AI agent's work understandable to the human who supervises it: terms explained on first use, self-made names marked, checked separated from expected, and documents that stay readable months later. Works together with superpowers.",
+  "author": {
+    "name": "Aaron Siebert"
+  },
+  "homepage": "https://github.com/ASbrt/technobabble",
+  "repository": "https://github.com/ASbrt/technobabble",
+  "license": "MIT",
+  "keywords": [
+    "communication",
+    "handoff",
+    "naming",
+    "documentation",
+    "skills"
+  ],
+  "dependencies": [
+    "superpowers@superpowers-marketplace"
+  ]
+}
