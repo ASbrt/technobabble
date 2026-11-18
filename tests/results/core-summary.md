@@ -25,6 +25,14 @@ How the shipped `core.md` does against the failures in [baseline-summary.md](bas
 | 19 code-unneeded-layer | 3 / 3 pass | 10 / 12 across later versions; both failures add settings nobody asked for, unrelated to the rules |
 | 20 code-history-in-names | 3 / 3 pass | 9 / 9 |
 
+## Does the comment rule help a reader?
+
+Scenario 23's code, without technobabble (`code-A.py`, from `baseline-1`) and with the comment rule (`code-B.py`, from `core-cmt-2`), was given to three fresh readers each, on a smaller model, with six questions about what the code does ([comprehension/](23/comprehension/)). All 36 answers were correct; the summed difficulty ratings were the same (11, 13, 13 against 13, 11, 13). For an AI reader this code gave no measurable gain. The test does not show what a human reader gets, and the baseline chosen was one of the better documented ones.
+
+## Opting out
+
+A project instruction overrides the comment rule: scenario 21 with an `AGENTS.md` excerpt saying "Comment only why ... No docstrings" gave 0 docstrings in 3 / 3 runs, each reply saying it followed the project's style ([21/optout-*](21/)).
+
 ## Replays
 
 Two rules could not be tested with one-reply scenarios, which never need a folder. They were tested by replaying planning tasks in a private repository: a fresh copy from before a milestone, no git history, the original request, plan only.

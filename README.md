@@ -13,7 +13,7 @@ It works together with [superpowers](https://github.com/obra/superpowers) and in
 | [core.md](core.md) | six rules: explain terms on first use; mark names you made up; say what you checked and what you did not; document code for someone new to it (what each module is for, In / Out / How for each function, the steps inside, the reasons, never the session's history); keep code and the data it reads together, and say when the files or folders don't; keep precision | every session, loaded by a session start hook |
 | [skills/writing-docs](skills/writing-docs/SKILL.md) | how to write READMEs, reference documents, decision records and glossaries so they stay understandable months later | when the agent writes or edits documentation |
 
-A project's own instructions (AGENTS.md, CLAUDE.md, its own skills) always take precedence.
+A project's own instructions (AGENTS.md, CLAUDE.md, its own skills) always take precedence. To turn a rule off for one project, say so there; for example, a line in AGENTS.md such as "Comment only why something is done; no docstrings" replaces the comment rule. To turn technobabble off entirely, disable the plugin.
 
 It runs on macOS, Linux and Windows: the skills are Markdown, and the hook is a single `cat` command that works in sh, Git Bash and PowerShell. It has been tested on macOS only.
 
