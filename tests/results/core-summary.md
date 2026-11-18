@@ -58,3 +58,16 @@ No scenario above needed a folder, so none tested one. The test was a replay of 
 | Core with the folder sentence | 3 / 3: each follows the documents and offers moving the data next to the code as a separate step |
 
 The folder sentence, added to "Where code goes": "Data a piece of code reads (its schemas, rules, examples) goes next to that code, not into a folder per kind of file; if the project's documents place it elsewhere, follow them, but tell the person what ends up apart and offer to change it." Core is now 387 words. Checked against small changes: 21 passes 3 / 3 with no new folder; 19 passes 2 / 3 (the failure again adds settings nobody asked for, as before the sentence; one passing run again puts `send_email` in a file of its own).
+
+## The whole tree: a concrete step, not a general request
+
+The folder sentence above covers data the agent adds. A second private replay tested whether agents step back and judge a tree that is already spread out: the same project one milestone later, with its database and its validator each spread over several top-level folders, and a request about a new service that says nothing about layout. Plans only.
+
+| Variant | Plans that named the existing spread |
+|---|---|
+| Baseline | 0 / 3 |
+| Core with "Where code goes" and the folder sentence | 0 / 3 |
+| + "When you add to a project, also look at whether its folders still keep together what belongs together" | 1 / 3 |
+| + "When you plan work that adds a new module or package, list the project's top-level folders and say in a phrase what each holds; if one subject is spread over several of them, tell the person and offer to regroup it as a separate step." | 3 / 3 (one named only one of the two spread subjects) |
+
+The general request was too vague to fire; the concrete step, tied to the moment of planning a new module, worked. All three followed the existing layout and offered regrouping as a separate step. With the general request, one bug fix (18) gained an unasked layout paragraph; with the concrete step, 18 (2 runs), 19 and 20 had no layout remark at all. Core is now 432 words.

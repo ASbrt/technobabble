@@ -10,7 +10,7 @@ It works together with [superpowers](https://github.com/obra/superpowers) and in
 
 | Part | What it does | When it applies |
 |---|---|---|
-| [core.md](core.md) | six rules: explain terms on first use, mark names you made up, say what you checked and what you did not, put the reason for non-obvious code in a comment that a reader who never saw the session can follow, give code with a job of its own its own file, keep the data code reads next to it, and say when a file does too many jobs or the data ends up apart, keep precision | every session, loaded by a session start hook |
+| [core.md](core.md) | six rules: explain terms on first use, mark names you made up, say what you checked and what you did not, put the reason for non-obvious code in a comment that a reader who never saw the session can follow, give code with a job of its own its own file, keep the data code reads next to it, say when a file does too many jobs or the data ends up apart, and when planning a new module, look at the whole folder tree and say if one subject is spread over several folders, keep precision | every session, loaded by a session start hook |
 | [skills/writing-docs](skills/writing-docs/SKILL.md) | how to write READMEs, reference documents, decision records and glossaries so they stay understandable months later | when the agent writes or edits documentation |
 
 A project's own instructions (AGENTS.md, CLAUDE.md, its own skills) always take precedence.
